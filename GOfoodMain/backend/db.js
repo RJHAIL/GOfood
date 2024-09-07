@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MongoDbURL = "mongodb://localhost:27017/GoFood"
+const MongoDbURL = process.env.MONGO_URL;
 
 const connectdb = async()=>
 {
@@ -9,13 +9,13 @@ const connectdb = async()=>
         await   mongoose.connect(MongoDbURL);
          console.log("connection is established");
          const db = mongoose.connection.db;
-         const fetched_data = await db.collection("food-items").find({}).toArray();
+         const fetched_data = await db.collection("food_items").find({}).toArray();
          
         //console.log(fetched_data);
-        global['food-items'] = fetched_data;
+        global['food_items'] = fetched_data;
 
-        const CategoryData = await db.collection("food-category").find({}).toArray();
-        global['food-category'] = CategoryData;
+        const CategoryData = await db.collection("food_category").find({}).toArray();
+        global['food_category'] = CategoryData;
 
       
          

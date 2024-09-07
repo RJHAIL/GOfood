@@ -8,11 +8,12 @@ router.post('/foodData',(req,res)=>
     try {
        // console.log(global['food-items']);
        res.send([
-        global['food-items'],   // response[0]
-        global['food-category'] // response[1]
-    ]);
+        global['food_items'],   // response[0]
+        global['food_category'] // response[1]
+    ]
 
-    } 
+    );
+} 
     catch (error) {
         console.error(error.message);
         res.send("Server Error!")

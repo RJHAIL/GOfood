@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 const express = require('express');
 const mongoDB = require("./db");
 const app = express();
@@ -6,7 +9,8 @@ const cors = require('cors');
 
 
 
-app.use(cors({origin:" http://localhost:5173"}))
+
+app.use(cors({origin:process.env.CLIENT_BASE_URL}))
 app.use(express.json())
 mongoDB();
 app.get('/',(req,res)=>

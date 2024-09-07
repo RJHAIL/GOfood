@@ -6,7 +6,7 @@ const validator = require("../validator/validation");
 const { NavLink } = require('react-router-dom');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
-const jwtSecretkey ="Gofood"
+const jwtSecretkey =process.env.JWT_SECRET_KEY;
 
 
 
