@@ -16,7 +16,7 @@ export default function Home() {
 
   const loadData = async () => {
 
-    let response = await fetch("http://localhost:2002/api/foodData", {
+    let response = await fetch(`${import.meta.env.VITE_API_URL}/api/foodData`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

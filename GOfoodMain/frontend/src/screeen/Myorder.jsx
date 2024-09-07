@@ -7,7 +7,7 @@ export default function MyOrder() {
 
     const fetchMyOrder = async () => {
         try {
-            let response = await fetch("http://localhost:2002/api/myorderdata", {
+            let response = await fetch(`${import.meta.env.VITE_API_URL}/api/myorderdata`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

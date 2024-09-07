@@ -17,7 +17,7 @@ export default function Login() {
   const handleSubmit= async (event)=>
   {
     event.preventDefault()
-         const response = await fetch("http://localhost:2002/api/loginuser",{
+         const response = await fetch(`${import.meta.env.VITE_API_URL}/api/loginuser`,{
           
           method:"POST",
           headers:{
