@@ -4,7 +4,7 @@ const router = express.Router()
 const User = require("../models/User")
 const validator = require("../validator/validation");
 const { NavLink } = require('react-router-dom');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 const jwtSecretkey =process.env.JWT_SECRET_KEY;
 
